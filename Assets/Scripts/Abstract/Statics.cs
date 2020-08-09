@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.IO;
 using UnityEngine;
 
@@ -64,5 +65,21 @@ namespace DysonSwarm
 
     }
 
-    
+
+    public enum Teams
+    {
+        Blue,
+        Green,
+        Red,
+        Yellow
+    }
+
+
+    [Serializable]
+    public class Ticket
+    {
+        public int ticketNumber = 0;
+        public int numberOfShips = 0;
+        public Teams team;
+    }
 }
