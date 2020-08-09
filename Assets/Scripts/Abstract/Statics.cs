@@ -9,6 +9,8 @@ namespace DysonSwarm
     public static class Statics
     {
 
+        public static float GAME_DURATION = 240;
+
         public static int LAUNCH_COOLDOWN = 10;
         public static int UPKEEP_TIME = 1;
 

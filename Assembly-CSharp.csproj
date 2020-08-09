@@ -68,7 +68,6 @@
     <Compile Include="Assets\Scripts\System\Fleets\Fleet.cs" />
     <Compile Include="Assets\Scripts\System\GPS.cs" />
     <Compile Include="Assets\Scripts\System\Planet.cs" />
-    <Compile Include="Assets\Scripts\System\Resources.cs" />
     <Compile Include="Assets\Scripts\System\SolarSystem.cs" />
     <Compile Include="Assets\Scripts\System\Sun.cs" />
     <Compile Include="Assets\Scripts\System\SystemController.cs" />

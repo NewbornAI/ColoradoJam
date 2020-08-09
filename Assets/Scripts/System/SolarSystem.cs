@@ -51,12 +51,23 @@ public class SolarSystem : MonoBehaviour
 
     protected float launchTimer = 0;
     protected int teamIndex = 0;
+    public float elapsed = 0;
+
 
     void FixedUpdate()
     {
+        if (elapsed > Statics.GAME_DURATION)
+        {
+            gameSpeed = 0;
+            enabled = false;
+            GameOver();
+        }
+
+
         if (gameSpeed > 0)
         {
-            launchTimer += Time.deltaTime * gameSpeed;
+            elapsed += Time.deltaTime;
+            launchTimer += Time.deltaTime;
 
             if (launchTimer >= Statics.LAUNCH_COOLDOWN) // Reset
             {
@@ -84,6 +95,14 @@ public class SolarSystem : MonoBehaviour
     }
 
 
+    public void GameOver()
+    {
+        int totalValue = 0;
+        foreach(Planet planet in planets)
+        {
+            totalValue += planet.value;
+        }
 
+    }
 
 }
