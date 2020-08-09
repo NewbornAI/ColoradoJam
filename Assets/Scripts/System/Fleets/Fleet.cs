@@ -11,7 +11,7 @@ public class Fleet : MonoBehaviour
 
     // Given by actor
     public float ships = 0;
-    public float thrust = 20;
+    public float thrust = 0;
     public float cargo = 0;
 
     public Team sender;

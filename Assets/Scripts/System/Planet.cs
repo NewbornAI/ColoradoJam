@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    //static int ORBIT_POINTS = 45;
 
     public List<Fleet> incomingFleets = new List<Fleet>();
     public List<Fleet> orbitingFleets = new List<Fleet>();
+
+    public int value = 0;
 
     public enum PlanetType
     {
@@ -22,7 +24,12 @@ public class Planet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //DrawOrbit();
+        value = Mathf.RoundToInt(transform.localScale.x / 5);
+        if (value == 0)
+            value = 1;
+
+        if (name == "Terra")
+            value = 0;
     }
 
     // Update is called once per frame
@@ -31,23 +38,6 @@ public class Planet : MonoBehaviour
         
     }
 
-    //public void DrawOrbit()
-    //{
-    //    LineRenderer orbitLine = GetComponentInChildren<LineRenderer>();
-    //    if (!orbitLine)
-    //        return;
-    //    orbitLine.transform.parent = transform.parent;
-
-    //    Vector3[] orbitPoints = new Vector3[ORBIT_POINTS];
-    //    float step = 360 / ORBIT_POINTS;
-    //    for (int i = 0; i < ORBIT_POINTS; i++)
-    //    {
-    //        orbitPoints[i] = transform.position;
-    //        transform.RotateAround(transform.parent.position, Vector3.down, step);
-    //    }
-    //    orbitLine.positionCount = ORBIT_POINTS;
-    //    orbitLine.SetPositions(orbitPoints);
-    //}
 
     public void WarnIncoming(Fleet fleet)
     {

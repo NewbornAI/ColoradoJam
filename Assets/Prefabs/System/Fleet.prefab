@@ -4775,7 +4775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ships: 0
-  thrust: 10
+  thrust: 30
   cargo: 0
   sender: {fileID: 0}
   destination: {fileID: 0}
@@ -4785,6 +4785,7 @@ MonoBehaviour:
   gps: {fileID: 0}
   orbiting: {fileID: 0}
   orbitAxis: {x: -1, y: 0, z: 0}
+  orbitSpeed: 100
 --- !u!1 &8762029740530459986
 GameObject:
   m_ObjectHideFlags: 0
