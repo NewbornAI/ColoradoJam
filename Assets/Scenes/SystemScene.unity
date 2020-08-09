@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18963408, g: 0.23118907, b: 0.19826487, a: 1}
+  m_IndirectSpecularColor: {r: 0.18960208, g: 0.23115483, b: 0.198203, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -313,14 +313,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277782680}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 500, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -500, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 336071508}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &1555352230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,26 +457,6 @@ PrefabInstance:
       propertyPath: home
       value: 
       objectReference: {fileID: 1788878150}
-    - target: {fileID: 4251247400952742586, guid: ed16c86093f69e0479300db66dc254e4,
-        type: 3}
-      propertyPath: tilt
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8481387061472398801, guid: ed16c86093f69e0479300db66dc254e4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c3558f896b4585e4c96f4903b6035999, type: 2}
-    - target: {fileID: 4375290442761419251, guid: ed16c86093f69e0479300db66dc254e4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f7d9d3185259f0d4da7554bee08758cf, type: 2}
-    - target: {fileID: 4375290441174257478, guid: ed16c86093f69e0479300db66dc254e4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f2d1f7204b8131743b050365e2ac1882, type: 2}
     m_RemovedComponents:
     - {fileID: 6344728305687554855, guid: ed16c86093f69e0479300db66dc254e4, type: 3}
     - {fileID: 6344728306606077199, guid: ed16c86093f69e0479300db66dc254e4, type: 3}

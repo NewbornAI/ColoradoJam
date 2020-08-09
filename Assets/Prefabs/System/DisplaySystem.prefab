@@ -292,7 +292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c132eedbe1136e41b563f5b1f7683ea, type: 2}
+  - {fileID: 2100000, guid: c49bafd78aad4004fa2cf17fec27eab9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -515,7 +515,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c3a9c7a1106d2784bb9f3328960eb43d, type: 2}
+  - {fileID: 2100000, guid: c49bafd78aad4004fa2cf17fec27eab9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -854,11 +854,6 @@ PrefabInstance:
       propertyPath: tilt
       value: 28
       objectReference: {fileID: 0}
-    - target: {fileID: 7256750075195086388, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7e5df6441daf34b4f965b5f199695776, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3071829784cfb694a822576216ca427a, type: 3}
 --- !u!4 &6974745345584340825 stripped
@@ -964,11 +959,6 @@ PrefabInstance:
       propertyPath: orbitalRadiusAU
       value: 0.39
       objectReference: {fileID: 0}
-    - target: {fileID: 7256750075195086388, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fb8b6ab1fcb444644a59270cd69e5cf5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3071829784cfb694a822576216ca427a, type: 3}
 --- !u!4 &6344728306595181348 stripped
@@ -1079,11 +1069,6 @@ PrefabInstance:
       propertyPath: tilt
       value: 78
       objectReference: {fileID: 0}
-    - target: {fileID: 7256750075195086388, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f5cea62616d48804386bdad6c1c8b058, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3071829784cfb694a822576216ca427a, type: 3}
 --- !u!4 &2840220414745550514 stripped
@@ -1189,11 +1174,6 @@ PrefabInstance:
       propertyPath: orbitalRadiusAU
       value: 1.52
       objectReference: {fileID: 0}
-    - target: {fileID: 7256750075195086388, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f7d9d3185259f0d4da7554bee08758cf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3071829784cfb694a822576216ca427a, type: 3}
 --- !u!4 &2840992861235784495 stripped
@@ -1284,26 +1264,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: orbitalPeriodYears
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: rotationPeriodDays
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: tilt
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: orbitalRadiusAU
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1575509440965200317, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1334,6 +1294,26 @@ PrefabInstance:
       propertyPath: metals
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: orbitalPeriodYears
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: rotationPeriodDays
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: tilt
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: orbitalRadiusAU
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3960197834044057489, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1349,11 +1329,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 7256750075195086388, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5ca928855ab76294caa55b4173180b04, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3071829784cfb694a822576216ca427a, type: 3}
 --- !u!4 &2840992860863159345 stripped
@@ -1574,11 +1549,6 @@ PrefabInstance:
       propertyPath: orbitalRadiusAU
       value: 39.46
       objectReference: {fileID: 0}
-    - target: {fileID: 7256750075195086388, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 773bd4bf5f6a86547a785300838ed753, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3071829784cfb694a822576216ca427a, type: 3}
 --- !u!4 &2840992859546450310 stripped
@@ -1684,11 +1654,6 @@ PrefabInstance:
       propertyPath: orbitalRadiusAU
       value: 5.2
       objectReference: {fileID: 0}
-    - target: {fileID: 7256750075195086388, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 02450e06ec36543429a0a7daa212190e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3071829784cfb694a822576216ca427a, type: 3}
 --- !u!4 &2840992859322692585 stripped
@@ -1882,17 +1847,17 @@ PrefabInstance:
     - target: {fileID: 9178401132376966376, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9178401132376966376, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9178401132376966376, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
@@ -1909,11 +1874,6 @@ PrefabInstance:
       propertyPath: orbitalRadiusAU
       value: 2.7
       objectReference: {fileID: 0}
-    - target: {fileID: 7256750075195086388, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4c132eedbe1136e41b563f5b1f7683ea, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3071829784cfb694a822576216ca427a, type: 3}
 --- !u!4 &2840992859262997662 stripped
@@ -2019,11 +1979,6 @@ PrefabInstance:
       propertyPath: orbitalRadiusAU
       value: 0.72
       objectReference: {fileID: 0}
-    - target: {fileID: 7256750075195086388, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a00ec13a06a9cb44d9410c3bc2129b13, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3071829784cfb694a822576216ca427a, type: 3}
 --- !u!4 &2840992860143915287 stripped
@@ -2129,11 +2084,6 @@ PrefabInstance:
       propertyPath: orbitalRadiusAU
       value: 9.54
       objectReference: {fileID: 0}
-    - target: {fileID: 7256750075195086388, guid: 3071829784cfb694a822576216ca427a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f2d1f7204b8131743b050365e2ac1882, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3071829784cfb694a822576216ca427a, type: 3}
 --- !u!4 &2840992859737517043 stripped
