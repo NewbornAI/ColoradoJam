@@ -34,7 +34,7 @@ public class CelestialBody : MonoBehaviour
         orbitalSpeed = orbitalSpeed * Statics.AU_TO_IG_RATIO; // game distance / sec
 
         // Tilt
-        transform.Rotate(Vector3.left, tilt);
+        model.transform.Rotate(Vector3.left, tilt);
 
         // Starting pos
         transform.localPosition = new Vector3(orbitalRadiusAU * Statics.AU_TO_IG_RATIO, 0, 0);
@@ -54,9 +54,9 @@ public class CelestialBody : MonoBehaviour
         else
         {
             if (rotationSpeed >= 0)
-                model.Rotate(Vector3.up, rotationSpeed * elapsed);
+                model.Rotate(Vector3.down, rotationSpeed * elapsed);
             else
-                model.Rotate(Vector3.down, -rotationSpeed * elapsed);
+                model.Rotate(Vector3.up, -rotationSpeed * elapsed);
         }
 
         // Orbit

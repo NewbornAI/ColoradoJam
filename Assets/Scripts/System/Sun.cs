@@ -19,15 +19,12 @@ public class Sun : MonoBehaviour
     public float habitableZoneStart = 0.5f;
     public float habitableZoneEnd = 1.5f;
 
-
-    private void Awake()
-    {
-
-    }
+    public float rotationSpeed = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        rotationSpeed = 360 / 25;
     }
 
     //public float tiltSpeed = 10;
@@ -35,17 +32,6 @@ public class Sun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.Translate(new Vector3(0, tiltSpeed * Time.deltaTime, 0));
-
-        //if (tiltSpeed > 0)
-        //{
-        //    if (transform.position.y > 2)
-        //        tiltSpeed = -tiltSpeed;
-        //}
-        //else
-        //{
-        //    if (transform.position.y < -2)
-        //        tiltSpeed = -tiltSpeed;
-        //}
+        transform.Rotate(Vector3.down, rotationSpeed * Time.deltaTime);
     }
 }

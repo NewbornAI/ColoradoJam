@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using DysonSwarm;
 using UnityEngine;
 
 public class Team : MonoBehaviour
@@ -11,7 +12,7 @@ public class Team : MonoBehaviour
     // Prefabs
     public Fleet fleetPrefab;
 
-
+    public int players = 0;
 
 
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class Team : MonoBehaviour
         {
             data[i] = fleet.CalculateNavigation(sensors[i].GetComponent<CelestialBody>());
 
-            if (data[i].launchWindow == true) // Planet can be reached
+            if (data[i].launchWindow && data[i].ETA < TimeRemaining) // Planet can be reached
                 validDestinations.Add(sensors[i]);
         }
 
@@ -63,4 +64,8 @@ public class Team : MonoBehaviour
     }
 
 
+    protected float TimeRemaining
+    {
+        get { return Statics.GAME_DURATION - transform.parent.parent.GetComponent<SolarSystem>().elapsed; }
+    }
 }

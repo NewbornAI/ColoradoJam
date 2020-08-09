@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{54F79B69-E3BF-F2D7-1660-38FC08BB6A20}</ProjectGuid>
+    <ProjectGuid>{4A97E6F1-A985-1298-CC7D-94FE48813A12}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\System\Fleets\Fleet.cs" />
     <Compile Include="Assets\Scripts\System\GPS.cs" />
     <Compile Include="Assets\Scripts\System\Planet.cs" />
+    <Compile Include="Assets\Scripts\System\Resources.cs" />
     <Compile Include="Assets\Scripts\System\SolarSystem.cs" />
     <Compile Include="Assets\Scripts\System\Sun.cs" />
     <Compile Include="Assets\Scripts\System\SystemController.cs" />
@@ -76,19 +77,19 @@
     <Compile Include="Assets\Scripts\UI\UIHandler.cs" />
     <Compile Include="Assets\UI\UIBasicOperations.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>H:/Unity/Projects/Colorado Jam/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>H:/Git/Colorado/ColoradoJam/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>H:/Unity/Projects/Colorado Jam/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>H:/Git/Colorado/ColoradoJam/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>H:/Unity/Projects/Colorado Jam/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>H:/Git/Colorado/ColoradoJam/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>H:/Unity/Projects/Colorado Jam/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>H:/Git/Colorado/ColoradoJam/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>H:/Unity/Projects/Colorado Jam/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>H:/Git/Colorado/ColoradoJam/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>H:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -292,13 +293,13 @@
       <HintPath>H:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>H:/Unity/Projects/Colorado Jam/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>H:/Git/Colorado/ColoradoJam/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>H:/Unity/Projects/Colorado Jam/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>H:/Git/Colorado/ColoradoJam/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>H:/Unity/Projects/Colorado Jam/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>H:/Git/Colorado/ColoradoJam/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>H:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

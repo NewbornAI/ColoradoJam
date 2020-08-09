@@ -6,8 +6,10 @@ public class Fleet : MonoBehaviour
 {
     
     public static float PLANETARY_ORBIT_SPEED = 100;
-    public static int LARGE_PLANET = 50;
-    public static float CLOSE_ORBIT = 0.6f; 
+    public static int LARGE_PLANET = 30;
+    public static int SMALL_PLANET = 3;
+    public static float CLOSE_ORBIT = 0.6f;
+    public static float FAR_ORBIT = 3;
 
     // Given by actor
     public float ships = 0;
@@ -77,18 +79,20 @@ public class Fleet : MonoBehaviour
         Vector3 direction = destination.transform.position - transform.position;
         float distance = direction.magnitude;
         float scale = destination.transform.localScale.x;
-        if (scale < LARGE_PLANET && distance < scale)
+        if ( (scale < LARGE_PLANET && distance < scale) ||
+            (scale >= LARGE_PLANET && distance < scale * CLOSE_ORBIT) ||
+            (scale <= SMALL_PLANET && distance < scale * FAR_ORBIT) )
         {
-            EnterOrbit(1);
-            return;
-        }
-        if (scale > LARGE_PLANET && distance < scale * CLOSE_ORBIT)
-        {
-            EnterOrbit(CLOSE_ORBIT);
+            EnterOrbit();
             return;
         }
 
-
+        // Course correction
+        if (ETA < 0 && distance < thrust) 
+        {
+            EnterOrbit();
+            return;
+        }
 
         // Else fly towards destination
 
@@ -102,6 +106,8 @@ public class Fleet : MonoBehaviour
         else
             transform.RotateAround(gps.gravityCenter, Vector3.up, -angularDeltaV * Time.deltaTime);
 
+        if (ETA < 3)
+            gps.ShipArriving(this);
     }
 
 
@@ -150,13 +156,23 @@ public class Fleet : MonoBehaviour
         }
 
 
-
         return true;
     }
 
 
-    public void EnterOrbit(float distance)
+    public void EnterOrbit()
     {
+        float orbitDistance = 1;
+        float scale = destination.transform.localScale.x;
+
+        if (scale > LARGE_PLANET)
+        {
+            orbitDistance = CLOSE_ORBIT;
+            orbitSpeed = PLANETARY_ORBIT_SPEED * orbitDistance;
+        }
+        else if (scale < SMALL_PLANET)
+            orbitDistance = FAR_ORBIT;
+
         if (destination)
         {
             // Reached destination
@@ -168,11 +184,6 @@ public class Fleet : MonoBehaviour
                 planet.EnteredOrbit(this);
 
             destination = null;
-            //if (transform.Find("Trail"))
-            //    Destroy(transform.Find("Trail").gameObject);
-
-            // Effect from fleet alignment
-            ChildEnterOrbit();
 
         }
         else if (!orbiting)
@@ -185,12 +196,11 @@ public class Fleet : MonoBehaviour
             transform.parent = orbiting.transform;
 
 
-        Vector3 pos = transform.localPosition.normalized * distance;
+        Vector3 pos = transform.localPosition.normalized * orbitDistance;
         transform.localPosition = pos;
-        orbitSpeed = PLANETARY_ORBIT_SPEED * distance;
-        orbitAxis = Vector3.Cross(pos, Vector3.RotateTowards(pos, -pos, 90, 0));
 
-
+        //orbitAxis = Vector3.Cross(pos, Vector3.RotateTowards(pos, -pos, 90, 0));
+        orbitAxis = Vector3.Cross(pos, orbiting.transform.position);
     }
 
 
@@ -323,11 +333,6 @@ public class Fleet : MonoBehaviour
             Die();
 
         return lost;
-    }
-
-    protected virtual void ChildEnterOrbit()
-    {
-        // Override this
     }
 
     public void InitGPS()

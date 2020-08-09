@@ -103,6 +103,7 @@ public class SolarSystem : MonoBehaviour
             totalValue += planet.value;
         }
 
+        controller.GameOver();
     }
 
 }

@@ -21,7 +21,7 @@ namespace DysonSwarm
 
         public static string LOG_PATH = "ErrorLog.txt";
 
-
+        public static float CAM_LOOK_TIME = 5;
         /// <summary>
         /// loss must be negative, return is positive
         /// </summary>
