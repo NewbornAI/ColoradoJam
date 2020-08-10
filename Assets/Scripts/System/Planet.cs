@@ -24,15 +24,16 @@ public class Planet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        value = Mathf.RoundToInt((transform.localScale.x + GetComponent<CelestialBody>().orbitalRadiusAU) );
+        if (value == 0)
+        {
+            value = Mathf.RoundToInt((transform.localScale.x + GetComponent<CelestialBody>().orbitalRadiusAU));
+        }
+
         if (value < 1)
             value = 1;
 
         if (name == "Terra")
             value = 0;
-
-        if (name == "Eris")
-            value = 500;
     }
 
     // Update is called once per frame
