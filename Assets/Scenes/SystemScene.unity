@@ -465,6 +465,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1277782682}
+    - target: {fileID: 7474134627430805614, guid: ed16c86093f69e0479300db66dc254e4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cb1b6abab555269479bcc2eb3d1e1f6c, type: 2}
     m_RemovedComponents:
     - {fileID: 6344728305687554855, guid: ed16c86093f69e0479300db66dc254e4, type: 3}
     - {fileID: 6344728306606077199, guid: ed16c86093f69e0479300db66dc254e4, type: 3}
