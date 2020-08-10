@@ -82,5 +82,25 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.13705944
       objectReference: {fileID: 0}
+    - target: {fileID: 889163656172324871, guid: 3cce605995a519842a2fe96795b7223e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -87.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 889163656172324871, guid: 3cce605995a519842a2fe96795b7223e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -400.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919472973077300949, guid: 3cce605995a519842a2fe96795b7223e,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071483070893699571, guid: 3cce605995a519842a2fe96795b7223e,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cce605995a519842a2fe96795b7223e, type: 3}

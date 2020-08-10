@@ -47,7 +47,9 @@ MonoBehaviour:
   sensors: []
   fleetPrefab: {fileID: 5723037584301968137, guid: 3cce605995a519842a2fe96795b7223e,
     type: 3}
-  players: 0
+  tickets: []
+  ticketsSent: 0
+  winnings: 0
 --- !u!1 &879228183676069567
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +97,9 @@ MonoBehaviour:
   sensors: []
   fleetPrefab: {fileID: 5417056752006594493, guid: 8d1eeb0078f399d439a612358c2e72ec,
     type: 3}
-  players: 0
+  tickets: []
+  ticketsSent: 0
+  winnings: 0
 --- !u!1 &2840992860497066283
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +419,10 @@ MonoBehaviour:
   planets: []
   teams: []
   controller: {fileID: 0}
+  blue: {fileID: 0}
+  green: {fileID: 0}
+  red: {fileID: 0}
+  yellow: {fileID: 0}
   elapsed: 0
 --- !u!114 &6344728305602448332
 MonoBehaviour:
@@ -606,7 +614,9 @@ MonoBehaviour:
   sensors: []
   fleetPrefab: {fileID: 2975194099928118648, guid: c34bf9d0443ddc84e964a06d85b798c1,
     type: 3}
-  players: 0
+  tickets: []
+  ticketsSent: 0
+  winnings: 0
 --- !u!1 &6344728306606077197
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +694,9 @@ MonoBehaviour:
   sensors: []
   fleetPrefab: {fileID: 7772600498128362078, guid: 8128a9d24fdb909498090f66fff45b88,
     type: 3}
-  players: 0
+  tickets: []
+  ticketsSent: 0
+  winnings: 0
 --- !u!1001 &1226904508028869605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -751,6 +763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
@@ -851,6 +868,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
@@ -967,6 +989,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: orbitalPeriodYears
@@ -1082,6 +1109,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 3000
+      objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: orbitalRadiusAU
@@ -1195,6 +1227,11 @@ PrefabInstance:
     - target: {fileID: 9178401132376966376, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
@@ -1484,6 +1521,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: orbitalPeriodYears
@@ -1598,6 +1640,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
@@ -1719,6 +1766,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 110
       objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: orbitalPeriodYears
@@ -1833,6 +1885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
@@ -1959,6 +2016,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
       propertyPath: orbitalPeriodYears
@@ -2068,6 +2130,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}
@@ -2183,6 +2250,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053739461551400691, guid: 3071829784cfb694a822576216ca427a,
+        type: 3}
+      propertyPath: value
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7129891159234276769, guid: 3071829784cfb694a822576216ca427a,
         type: 3}

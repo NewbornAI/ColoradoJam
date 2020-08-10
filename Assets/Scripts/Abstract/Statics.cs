@@ -1,9 +1,10 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-namespace DysonSwarm
+namespace coloradoJam
 {
 
 
@@ -74,6 +75,11 @@ namespace DysonSwarm
         Yellow
     }
 
+    [Serializable]
+    public class Tickets
+    {
+        public List<Ticket> list = new List<Ticket>();
+    }
 
     [Serializable]
     public class Ticket
@@ -81,5 +87,6 @@ namespace DysonSwarm
         public int ticketNumber = 0;
         public int numberOfShips = 0;
         public Teams team;
+        public int winnings = 0;
     }
 }

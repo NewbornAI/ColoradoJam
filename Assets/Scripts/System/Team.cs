@@ -1,6 +1,6 @@
 ﻿
 using System.Collections.Generic;
-using DysonSwarm;
+using coloradoJam;
 using UnityEngine;
 
 public class Team : MonoBehaviour
@@ -12,8 +12,10 @@ public class Team : MonoBehaviour
     // Prefabs
     public Fleet fleetPrefab;
 
-    public int players = 0;
+    public List<Ticket> tickets = new List<Ticket>();
+    public int ticketsSent = 0;
 
+    public float winnings = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,13 @@ public class Team : MonoBehaviour
     {
         Fleet fleet = CreateFleet();
         fleet.ships = 1;
+
+        if (ticketsSent < tickets.Count)
+        {
+            fleet.ships += tickets[ticketsSent].numberOfShips;
+            fleet.ticket = tickets[ticketsSent];
+            ticketsSent++;
+        }
 
         Fleet.NavigationData[] data = new Fleet.NavigationData[sensors.Count];
         List<Planet> validDestinations = new List<Planet>();
@@ -49,7 +58,7 @@ public class Team : MonoBehaviour
         if (!launched)
         {
             // Transfer ships to next launch
-            //fleet.Die();
+            fleet.Die();
         }
     }
 

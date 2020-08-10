@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DysonSwarm;
+using coloradoJam;
 
 public class SolarSystem : MonoBehaviour
 {
@@ -15,9 +15,12 @@ public class SolarSystem : MonoBehaviour
     
     protected float launchInterval = 0;
 
+    public Team blue;
+    public Team green;
+    public Team red;
+    public Team yellow;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GenerateSystem();
         UpdateSensors();
@@ -34,7 +37,22 @@ public class SolarSystem : MonoBehaviour
     {
         // Initialize
         planets.AddRange(transform.GetComponentsInChildren<Planet>());
+
         teams.AddRange(transform.Find("Teams").GetComponentsInChildren<Team>());
+        int first = Random.Range(0, teams.Count); // Random first player
+        while (first > 0)
+        {
+            Team temp = teams[0];
+            teams.RemoveAt(0);
+            teams.Add(temp);
+            first--;
+        }
+
+        blue = transform.Find("Teams").Find("Blue").GetComponent<Team>();
+        green = transform.Find("Teams").Find("Green").GetComponent<Team>();
+        red = transform.Find("Teams").Find("Red").GetComponent<Team>();
+        yellow = transform.Find("Teams").Find("Yellow").GetComponent<Team>();
+
 
         launchInterval = Statics.LAUNCH_COOLDOWN / teams.Count;
 
@@ -101,6 +119,32 @@ public class SolarSystem : MonoBehaviour
         foreach(Planet planet in planets)
         {
             totalValue += planet.value;
+            float totalShips = 0;
+            foreach (Fleet fleet in planet.orbitingFleets)
+                totalShips += fleet.ships;
+
+            foreach (Fleet fleet in planet.orbitingFleets)
+            {
+                if (fleet.ticket != null)
+                {
+                    fleet.ticket.winnings += Mathf.RoundToInt(fleet.ships-1 / totalShips * planet.value); // player gets rewards
+                }
+
+                fleet.sender.winnings += 1 / totalShips * planet.value; // team gets the rest
+
+            }
+
+        }
+
+        foreach (Team team in teams)
+        {
+            float totalShips = Statics.GAME_DURATION / Statics.LAUNCH_COOLDOWN; // npc ships
+
+            foreach (Ticket ticket in team.tickets)
+                totalShips += ticket.numberOfShips; // total ships sent by team
+
+            foreach (Ticket ticket in team.tickets)
+                ticket.winnings = Mathf.RoundToInt(ticket.numberOfShips * team.winnings / totalShips);
         }
 
         controller.GameOver();

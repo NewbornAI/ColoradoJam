@@ -1,6 +1,6 @@
 ﻿
 using UnityEngine;
-using DysonSwarm;
+using coloradoJam;
 
 public class CelestialBody : MonoBehaviour
 {

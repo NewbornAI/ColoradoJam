@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using DysonSwarm;
+using coloradoJam;
 using UnityEngine;
 
 public class GPS : MonoBehaviour
@@ -72,7 +72,10 @@ public class GPS : MonoBehaviour
     {
         cam.transform.parent = target;
         camLookAt = target;
-        watchDistance = Mathf.Min(-50, Mathf.Max(-30 * camLookAt.localScale.x, -1000));
+        if (target.localScale.x < 30)
+            watchDistance = Mathf.Min(-50, -30 * camLookAt.localScale.x);
+        else
+            watchDistance = Mathf.Max(-1000, -10 * camLookAt.localScale.x);
         camLookTimer = 0;
 
     }

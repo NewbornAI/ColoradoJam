@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\System\Sun.cs" />
     <Compile Include="Assets\Scripts\System\SystemController.cs" />
     <Compile Include="Assets\Scripts\System\Team.cs" />
+    <Compile Include="Assets\Scripts\UI\BuyerUI.cs" />
     <Compile Include="Assets\Scripts\UI\TrainingHUD.cs" />
     <Compile Include="Assets\Scripts\UI\UIHandler.cs" />
     <Compile Include="Assets\UI\UIBasicOperations.cs" />
