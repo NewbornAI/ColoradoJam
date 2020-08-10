@@ -123,18 +123,38 @@ public class SolarSystem : MonoBehaviour
             foreach (Fleet fleet in planet.orbitingFleets)
                 totalShips += fleet.ships;
 
+            float[] teamShips = new float[teams.Count];
+            for (int i = 0; i < teams.Count; i++)
+                teamShips[i] = 0;
+
             foreach (Fleet fleet in planet.orbitingFleets)
             {
+                int teamIndex = teams.IndexOf(fleet.sender);
+                teamShips[teamIndex] += fleet.ships;
+
                 if (fleet.ticket != null)
                 {
-                    fleet.ticket.winnings += Mathf.RoundToInt(fleet.ships-1 / totalShips * planet.value); // player gets rewards
+                    fleet.ticket.winnings += Mathf.RoundToInt((fleet.ships - 1) / totalShips * planet.value); // player gets rewards
                 }
-
-                fleet.sender.winnings += 1 / totalShips * planet.value; // team gets the rest
-
             }
 
+            // winning team gets the rest
+            float max = 0;
+            int winner = -1;
+            for (int i = 0; i < teams.Count; i++)
+            {
+                if (teamShips[i] > max)
+                {
+                    max = teamShips[i];
+                    winner = i;
+                }
+            }
+            if (winner >= 0)
+                teams[winner].winnings += Mathf.RoundToInt(planet.value * teamShips[winner] / totalShips);
+
         }
+
+        Tickets tickets = new Tickets();
 
         foreach (Team team in teams)
         {
@@ -143,8 +163,15 @@ public class SolarSystem : MonoBehaviour
             foreach (Ticket ticket in team.tickets)
                 totalShips += ticket.numberOfShips; // total ships sent by team
 
+            int totalPayout = 0;
+            int totalBought = 0;
             foreach (Ticket ticket in team.tickets)
-                ticket.winnings = Mathf.RoundToInt(ticket.numberOfShips * team.winnings / totalShips);
+            {
+                ticket.winnings += Mathf.RoundToInt(ticket.numberOfShips * team.winnings / totalShips);
+                totalBought += ticket.numberOfShips;
+                totalPayout += ticket.winnings;
+                tickets.list.Add(ticket);
+            }
         }
 
         controller.GameOver();
