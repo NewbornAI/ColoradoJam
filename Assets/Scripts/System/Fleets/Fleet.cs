@@ -1,5 +1,5 @@
 ﻿
-using DysonSwarm;
+using coloradoJam;
 using UnityEngine;
 
 public class Fleet : MonoBehaviour
@@ -29,6 +29,8 @@ public class Fleet : MonoBehaviour
     public CelestialBody orbiting;
     public Vector3 orbitAxis = Vector3.down;
     public float orbitSpeed = PLANETARY_ORBIT_SPEED;
+
+    public Ticket ticket = null;
 
     // Start is called before the first frame update
     void Start()

@@ -1,0 +1,15 @@
+Ticket   Payout
+  1      2
+  3      0
+  4      3
+  9      3
+  2      6
+  8      2
+  0      7
+  5      3
+  6      8
+  7      8
+
+
+ Total bought 50
+ Total payout 42
