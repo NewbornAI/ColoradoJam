@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SystemScene.unity
     guid: 0b6863ec324558c438b46cf4f5eb088e
+  - enabled: 0
+    path: Assets/Scenes/BuyerScene.unity
+    guid: a8e2e0b6e40c72947a4dc5486df29954
   m_configObjects: {}

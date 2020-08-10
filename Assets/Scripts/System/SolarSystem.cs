@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using coloradoJam;
+using UnityEngine;
 
 public class SolarSystem : MonoBehaviour
 {
@@ -154,7 +153,9 @@ public class SolarSystem : MonoBehaviour
 
         }
 
-        Tickets tickets = new Tickets();
+        int totalBought = 0;
+        int totalPayout = 0;
+        Ticket[] sortedRange = new Ticket[controller.tickets.list.Count];
 
         foreach (Team team in teams)
         {
@@ -163,17 +164,23 @@ public class SolarSystem : MonoBehaviour
             foreach (Ticket ticket in team.tickets)
                 totalShips += ticket.numberOfShips; // total ships sent by team
 
-            int totalPayout = 0;
-            int totalBought = 0;
             foreach (Ticket ticket in team.tickets)
             {
                 ticket.winnings += Mathf.RoundToInt(ticket.numberOfShips * team.winnings / totalShips);
                 totalBought += ticket.numberOfShips;
                 totalPayout += ticket.winnings;
-                tickets.list.Add(ticket);
+                sortedRange[ticket.ticketNumber] = ticket;
             }
         }
 
+        float desired = totalBought * 0.65f;
+        float modifier = desired / totalPayout;
+
+        for(int i = 0; i < controller.tickets.list.Count; i++)
+        {
+            controller.tickets.list[i].winnings = Mathf.RoundToInt(sortedRange[i].winnings * modifier);
+        }
+        
         controller.GameOver();
     }
 

@@ -79,6 +79,9 @@ namespace coloradoJam
     public class Tickets
     {
         public List<Ticket> list = new List<Ticket>();
+
+        public int totalPayout = 0;
+        public int totalBought = 0;
     }
 
     [Serializable]
