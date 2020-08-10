@@ -17,6 +17,8 @@ public class SystemController : MonoBehaviour
     public SolarSystem systemPrefab;
     public Camera cam;
 
+    public Tickets tickets = new Tickets();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,14 +33,15 @@ public class SystemController : MonoBehaviour
 
     public void LoadPlayers()
     {
-        Tickets tickets = new Tickets();
 
         try
         {
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).ToString() + "/Tickets.bin";
             IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream("Tickets.bin", FileMode.Open, FileAccess.Read, FileShare.Read);
+            Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
             tickets = (Tickets)formatter.Deserialize(stream); 
             stream.Close();
+            File.Delete(path);
         }
         catch (Exception e)
         {
@@ -82,30 +85,12 @@ public class SystemController : MonoBehaviour
         time = time.Replace(" ", "_");
         time = time.Replace("/", "");
         time = time.Replace(":", "");
-        string saveFile = "Payout_" + time + ".bin";
+
+        string path = Directory.GetParent(Directory.GetCurrentDirectory()).ToString() + "Payouts/Payout_" + time + ".txt";
 
         try
         {
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(saveFile, FileMode.Create, FileAccess.Write, FileShare.None);
-            foreach (Team team in system.teams)
-            {
-                formatter.Serialize(stream, team.tickets);
-            }
-            stream.Close();
-        }
-        catch (Exception e)
-        {
-            if (e != null) { }
-
-            Statics.LogDebug("Could not open " + saveFile);
-        }
-
-        saveFile = "Payout_" + time + ".txt";
-
-        try
-        {
-            Stream stream = new FileStream(saveFile, FileMode.Create, FileAccess.Write, FileShare.None);
+            Stream stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
 
             string content = "Ticket (bought) Payout\r\n";
             int totalPayout = 0;
@@ -134,7 +119,7 @@ public class SystemController : MonoBehaviour
         {
             if (e != null) { }
 
-            Statics.LogDebug("Could not open " + saveFile);
+            Statics.LogDebug("Could not open " + path);
         }
 
 

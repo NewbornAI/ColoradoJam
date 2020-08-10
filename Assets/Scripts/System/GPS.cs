@@ -21,6 +21,8 @@ public class GPS : MonoBehaviour
     {
         if (suns.Count > 0)
             gravityCenter = suns[0].transform.position;
+
+        CamLook(terra.transform);
     }
 
     public float camLookTimer = 0;
@@ -75,7 +77,7 @@ public class GPS : MonoBehaviour
         if (target.localScale.x < 30)
             watchDistance = Mathf.Min(-50, -30 * camLookAt.localScale.x);
         else
-            watchDistance = Mathf.Max(-1000, -10 * camLookAt.localScale.x);
+            watchDistance = Mathf.Max(-700, -10 * camLookAt.localScale.x);
         camLookTimer = 0;
 
     }
