@@ -86,7 +86,7 @@ public class SystemController : MonoBehaviour
         time = time.Replace("/", "");
         time = time.Replace(":", "");
 
-        string path = Directory.GetParent(Directory.GetCurrentDirectory()).ToString() + "Payouts/Payout_" + time + ".txt";
+        string path = Directory.GetParent(Directory.GetCurrentDirectory()).ToString() + "/Payouts/Payout_" + time + ".txt";
 
         try
         {
@@ -96,18 +96,15 @@ public class SystemController : MonoBehaviour
             int totalPayout = 0;
             int totalShips = 0;
 
-            foreach (Team team in system.teams)
+            foreach (Ticket ticket in tickets.list)
             {
-                foreach (Ticket ticket in team.tickets)
-                {
-                    content += "  " + ticket.ticketNumber + "     (" + ticket.numberOfShips + ")     " + ticket.winnings + "\r\n";
-                    totalPayout += ticket.winnings;
-                    totalShips += ticket.numberOfShips;
-                }
+                content += "  " + ticket.ticketNumber + "     (" + ticket.numberOfShips + "$)     " + ticket.winnings + "$\r\n";
+                totalPayout += ticket.winnings;
+                totalShips += ticket.numberOfShips;
             }
 
-            content += "\r\n\r\n Total bought " + totalShips;
-            content += "\r\n Total payout " + totalPayout;
+            content += "\r\n\r\n Total bought " + totalShips + "$";
+            content += "\r\n Total payout " + totalPayout + "$";
 
             UTF8Encoding utf8 = new UTF8Encoding();
             Byte[] buffer = utf8.GetBytes(content);
